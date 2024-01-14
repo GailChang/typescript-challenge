@@ -6,4 +6,8 @@
  */
 export function uniqueElements(array: number[]): number[] {
     // 請在此處寫下你的程式碼
+    return [...new Set(array)];
+    // return array.filter((value, index, array) => {
+    //     return array.indexOf(value) === index;
+    // });
 }

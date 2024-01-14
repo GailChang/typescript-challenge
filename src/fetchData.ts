@@ -6,4 +6,9 @@
  */
 
 // 請在下方寫下你的程式碼
-
+export async function fetchData (url: string) {
+    return fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then(function (response) {
+            return response.json();
+        });
+}
