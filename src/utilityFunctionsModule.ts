@@ -9,6 +9,15 @@
  */
 export function formatDate(date: Date): string {
     // 請在此處寫下你的程式碼
+    let y: number = date.getFullYear();
+    let m: number = date.getMonth() + 1;
+    let d: number = date.getDate();
+    let arr: string[] = [
+        y.toString(),
+        m.toString().padStart(2, "0"),
+        d.toString().padStart(2, "0"),
+    ];
+    return arr.join("-");
 }
 
 /**
@@ -22,4 +31,5 @@ export function formatDate(date: Date): string {
  */
 export function roundNumber(num: number): number {
     // 請在此處寫下你的程式碼
+    return Math.round(num);
 }

@@ -20,4 +20,12 @@ interface UrlParts {
 
 export function parseUrl(url: string): UrlParts {
    // 請在此處寫下你的程式碼
+   let hname = url.substring(url.indexOf("//") + 2);
+   hname = hname.substring(0, hname.indexOf("/"));
+   let rtn: UrlParts = {
+       protocol: url.substring(0, url.indexOf("//")),
+       hostname: hname,
+       path: url.substring(url.indexOf(hname) + hname.length),
+   };
+   return rtn;
 }
