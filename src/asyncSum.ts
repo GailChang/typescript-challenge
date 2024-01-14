@@ -6,16 +6,14 @@
  */
 
 
-export function asyncSum(numbers: number[]): Promise<number> {
-    
+export function asyncSum(numbers: number[]): Promise<number> {    
     return new Promise((resolve, reject) => {
-        try {
-            let total = 0;
+        let total = 0;
+        if (numbers.length > 0) {
             numbers.forEach((n) => (total += n));
             resolve(total);
-        } catch (error) {
-            reject(error);
         }
+        resolve(0);
     })
 }
 

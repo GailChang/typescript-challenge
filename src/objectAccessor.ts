@@ -14,7 +14,6 @@
  */
 export function createObjectAccessor<T>(obj: T) {
     // 請在此處寫下你的程式碼
-
     interface newAcc {
         objIn: T;
         get: (key: string) => any;
@@ -23,7 +22,7 @@ export function createObjectAccessor<T>(obj: T) {
 
     let accessor: newAcc = {
         objIn: obj,
-        get: (key: string) => obj[key as keyof typeof obj] || key,
+        get: (key: string) => obj[key as keyof typeof obj],
         set: (key: string, value: any) => {
             obj[key as keyof typeof obj] = value;
         },
